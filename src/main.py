@@ -47,7 +47,7 @@ if __name__ == '__main__':
                             for File in Files:
     #---------------------------Se establece la ruta del file selecionado
                                 file_Path=f"{source_Path}/{channel}/{VOD_Pack}/{File}"
-                                print(f"{file_Path} Select")
+                                print(f"{channel}/{VOD_Pack}/{File} Select")
     #---------------------------Pregunta si el file es un xml
                                 if '.xml' in File:
     #-------------------------------Pregunta si el file existe en la nube 
@@ -106,7 +106,7 @@ if __name__ == '__main__':
     #-----------------------------------Pregunta si la cantidad de files registrados en la base de datos es igual a la cantidad de files extraidos del xml
                                         if CantDB==CantXML:
     #---------------------------------------Se establece la ruta en ek bucket de subir el file
-                                            object_name=f"{Bucket}/{VOD_Pack}/{File}"
+                                            object_name=f"{channel}/{VOD_Pack}/{File}"
                                             try:
                                                 print(f"\tuploading file")
     #-------------------------------------------Se utiliza el metodo para subir el archivo al bucket
@@ -137,7 +137,7 @@ if __name__ == '__main__':
                                         pass
                                     else:
     #-----------------------------------Se establece la ruta para subir el file al bucket
-                                        object_name=f"{Bucket}/{VOD_Pack}/{File}"
+                                        object_name=f"{channel}/{VOD_Pack}/{File}"
                                         try:
                                             print(f"\tUploading file")
     #---------------------------------------Se utiliza el metodo para subir el archivo al bucket
@@ -164,7 +164,7 @@ if __name__ == '__main__':
                                         pass
                                     else:
     #-----------------------------------Si no hay registro en la base de datos  se establece la ruta de destino
-                                        object_name=f"{Bucket}/{VOD_Pack}/{File}"
+                                        object_name=f"{channel}/{VOD_Pack}/{File}"
                                         try:
                                             print(f"\tUploading file")
     #---------------------------------------Se utiliza el metodo upload para subir el archivo al bucket
